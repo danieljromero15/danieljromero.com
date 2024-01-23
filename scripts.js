@@ -2,21 +2,15 @@ function dropText(id, dropID) {
     //console.log(id);
     //console.log(dropID);
     var text = document.getElementById(id).innerHTML;
-    /*var startText = text.substring(0, 4);
-    console.log(text);
-    console.log(startText);*/
-    //console.log(text.substring(5, text.length))
-    //console.log(text);
 
     document.getElementById(dropID).classList.toggle("show");
-    if(document.getElementById(dropID).classList.contains('show')){
+    if (document.getElementById(dropID).classList.contains('show')) {
         document.getElementById(id).innerHTML = "&or;";
-    }else{
+    } else {
         document.getElementById(id).innerHTML = "&gt; ";
     }
-    //document.getElementById("schoolProjectsButton").innerHTML = "&lt;School Projects";
 
-    
+
 }
 
 window.onclick = function (event) {
@@ -29,11 +23,11 @@ window.onclick = function (event) {
                 openDropdown.classList.remove('show');
 
                 var arrows = document.getElementsByClassName("dropdownArrow")
-                for(var i = 0; i < arrows.length; i++){
+                for (var i = 0; i < arrows.length; i++) {
                     arrows[i].innerHTML = "&gt;";
                 }
             }
         }
-        
+
     }
 }

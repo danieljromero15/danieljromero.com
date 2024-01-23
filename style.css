@@ -1,6 +1,6 @@
 body {
     background-color: beige;
-    font-size:100%;
+    font-size: 100%;
 }
 
 p {
@@ -13,17 +13,17 @@ p {
     display: block;
 }
 
-.dropbtn{
-    background:none;
-    border:none;
+.dropbtn {
+    background: none;
+    border: none;
     font-size: 3vh;
-    padding:0.6%;
+    padding: 0.6%;
 }
 
 .dropdown-content {
-    display:none;
+    display: none;
     position: relative;
-    padding:0px;
+    padding: 0px;
     font-size: 3vh;
 }
 
