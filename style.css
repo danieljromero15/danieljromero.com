@@ -10,13 +10,14 @@ p {
 
 .dropdown {
     position: relative;
-    display: inline-block;
+    display: block;
 }
 
 .dropbtn{
     background:none;
     border:none;
     font-size: 3vh;
+    padding:0.6%;
 }
 
 .dropdown-content {
