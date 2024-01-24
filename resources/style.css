@@ -1,3 +1,7 @@
+html{
+    overflow-x: hidden;
+}
+
 body {
     background-color: beige;
     font-size: 100%;
@@ -34,10 +38,16 @@ p {
 }
 
 .jarjar{
-    max-width: 20%;
+    max-width: 100%;
     max-height: 12%;
     position: absolute;
     bottom:0;
-    right:0;
+    right: 0;
     opacity: 0.1;
+    animation: marqueeAnimation 60s linear infinite;
+}
+
+@keyframes marqueeAnimation {
+    0% {transform: translateX(100%);}
+    100% {transform: translateX(-1000%);}
 }
