@@ -38,18 +38,3 @@ p {
 .show {
     display: block;
 }
-
-.jarjar{
-    max-width: 100%;
-    max-height: 12%;
-    position: absolute;
-    bottom:0;
-    right: 0;
-    opacity: 0.1;
-    animation: marqueeAnimation 100s linear;
-}
-
-@keyframes marqueeAnimation {
-    0% {transform: translateX(0%);}
-    100% {transform: translateX(-1000%);}
-}
