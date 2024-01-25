@@ -1,1 +1,1 @@
-A website to showcase all of my GitHub projects
+A website to showcase all of my GitHub projects.
