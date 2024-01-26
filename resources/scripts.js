@@ -3,6 +3,8 @@ function dropText(id, dropID) {
     //console.log(dropID);
     var text = document.getElementById(id).innerHTML;
 
+    //closeDropdown();
+
     document.getElementById(dropID).classList.toggle("show");
     if (document.getElementById(dropID).classList.contains('show')) {
         document.getElementById(id).innerHTML = "&or;";
@@ -10,11 +12,11 @@ function dropText(id, dropID) {
         document.getElementById(id).innerHTML = "&gt;";
     }
 
-
 }
 
-window.onclick = function (event) {
-    if (!event.target.matches('.dropbtn')) {
+function closeDropdown(dropEvent){
+    console.log(dropEvent);
+    if (!dropEvent.target.matches('.dropbtn')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
         var i;
         for (i = 0; i < dropdowns.length; i++) {
@@ -31,3 +33,5 @@ window.onclick = function (event) {
 
     }
 }
+
+window.onclick = function (event) {closeDropdown(event);};

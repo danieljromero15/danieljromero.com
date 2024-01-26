@@ -18,9 +18,13 @@ table, td, th {
     border: 1px solid;
 }
 
+table{
+    table-layout: fixed;
+    width: 90%;
+}
+
 td {
-    padding-left: 2vw;
-    padding-right: 2vw;
+    text-align: center;
 }
 
 .dropdown {
