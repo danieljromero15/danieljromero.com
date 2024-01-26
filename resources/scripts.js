@@ -7,7 +7,7 @@ function dropText(id, dropID) {
     if (document.getElementById(dropID).classList.contains('show')) {
         document.getElementById(id).innerHTML = "&or;";
     } else {
-        document.getElementById(id).innerHTML = "&gt; ";
+        document.getElementById(id).innerHTML = "&gt;";
     }
 
 
