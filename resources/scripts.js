@@ -17,32 +17,27 @@ function dropText(id, dropID) {
 function closeDropdown(dropEvent, notThisOne) {
     console.log(dropEvent);
     var dropdowns = document.getElementsByClassName("dropdown-content");
-    try{
-    if (!dropEvent.target.matches('.dropbtn')) {
-        closeDropdownsList(dropdowns);
-    }}catch(TypeError){
-        /*console.log(dropdowns);
-
-        console.log("need to remove: " + notThisOne);*/
+    try {
+        if (!dropEvent.target.matches('.dropbtn')) {
+            closeDropdownsList(dropdowns);
+        }
+    } catch (TypeError) {
 
         var newDropdowns = [];
 
-        for(var n = 0; n < dropdowns.length; n++){
+        for (var n = 0; n < dropdowns.length; n++) {
             //console.log(dropdowns[n]);
-            if(dropdowns[n].id !== notThisOne){
+            if (dropdowns[n].id !== notThisOne) {
                 newDropdowns.push(dropdowns[n]);
             }
         }
-
-        /*console.log("New Dropdowns:")
-        console.log(newDropdowns);*/
 
         closeDropdownsList(newDropdowns);
 
     }
 }
 
-function closeDropdownsList(dropdownsCollection){
+function closeDropdownsList(dropdownsCollection) {
     var i;
     for (i = 0; i < dropdownsCollection.length; i++) {
         var openDropdown = dropdownsCollection[i];
