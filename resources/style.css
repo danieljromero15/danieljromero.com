@@ -49,7 +49,8 @@ td {
     display: none;
     position: relative;
     padding: 1%;
-    font-size: 2.5vh;
+    max-font-size: 20%;
+    font-size: 2.2vh;
     margin-left: 2em;
 }
 
