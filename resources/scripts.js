@@ -16,16 +16,16 @@ function dropText(id, dropID) {
 
 function closeDropdown(dropEvent, notThisOne) {
     console.log(dropEvent);
-    var dropdowns = document.getElementsByClassName("dropdown-content");
+    const dropdowns = document.getElementsByClassName("dropdown-content");
     try {
         if (!dropEvent.target.matches('.dropbtn')) {
             closeDropdownsList(dropdowns);
         }
     } catch (TypeError) {
 
-        var newDropdowns = [];
+        let newDropdowns = [];
 
-        for (var n = 0; n < dropdowns.length; n++) {
+        for (let n = 0; n < dropdowns.length; n++) {
             //console.log(dropdowns[n]);
             if (dropdowns[n].id !== notThisOne) {
                 newDropdowns.push(dropdowns[n]);
@@ -38,13 +38,13 @@ function closeDropdown(dropEvent, notThisOne) {
 }
 
 function closeDropdownsList(dropdownsCollection) {
-    var i;
+    let i;
     for (i = 0; i < dropdownsCollection.length; i++) {
-        var openDropdown = dropdownsCollection[i];
+        const openDropdown = dropdownsCollection[i];
         if (openDropdown.classList.contains('show')) {
             openDropdown.classList.remove('show');
 
-            var arrows = document.getElementsByClassName("dropdownArrow")
+            const arrows = document.getElementsByClassName("dropdownArrow")
             for (i = 0; i < arrows.length; i++) {
                 arrows[i].innerHTML = "&gt;";
             }
