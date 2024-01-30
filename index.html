@@ -11,59 +11,75 @@
 </head>
 
 <body>
-    <h1 style="text-align: center;">Daniel Romero's GitHub Repositories</h1>
-    <p style="text-align: center;">Website still in progress</p>
+<header><h1 style="text-align: center;">Daniel Romero's GitHub Repositories</h1>
+    <p style="text-align: center;">Website still in progress</p></header>
 
-    <hr>
+<hr>
 
-    <div class="dropdown">
-        <button onclick="dropText(personalArrow.id, personalDropRepos.id)" class="dropbtn"><span id="personalArrow"
-                class="dropdownArrow">&gt;</span> Personal Projects</button>
-        <div id="personalDropRepos" class="dropdown-content">
-            <a href="https://github.com/danieljromero15/danieljromero15.github.io">danieljromero15.github.io</a> - This
-            website!<br>
-            <a href="https://github.com/danieljromero15/Projects">Projects</a> - A fork of the popular
-            "Projects" repository, that includes practical projects for any programming language<br>
-            <a href="https://github.com/danieljromero15/imgStitch">imgStitch</a> - An old project from a few years ago
-            that allowed me to put together a 36000x36000 combined image of a map of Breath of the Wild. Details are in
-            the Readme's
-        </div>
-    </div>
+<table class="center">
+    <tr>
+        <td>
+            <div class="dropdown">
+                <button onclick="dropText(personalArrow.id, personalDropRepos.id)" class="dropbtn"><span
+                        id="personalArrow"
+                        class="dropdownArrow">&gt;</span>&nbsp;Personal Projects
+                </button>
+            </div>
+        </td>
+        <td>
+            <div class="dropdown">
+                <button onclick="dropText(schoolArrow.id, schoolProjectsDropRepos.id)" class="dropbtn"><span
+                        id="schoolArrow"
+                        class="dropdownArrow">&gt;</span>&nbsp;School Projects
+                </button>
+            </div>
+        </td>
+        <td>
+            <div class="dropdown">
+                <button onclick="dropText(forkArrow.id, forksRepos.id)" class="dropbtn"><span id="forkArrow"
+                                                                                              class="dropdownArrow">&gt;</span>&nbsp;Forks
+                </button>
+            </div>
+        </td>
+    </tr>
+</table>
 
-    <br>
+<div id="personalDropRepos" class="dropdown-content">
+    <a href="https://github.com/danieljromero15/danieljromero15.github.io">danieljromero15.github.io</a> - This
+    website!<br>
+    <a href="https://github.com/danieljromero15/Projects">Projects</a> - A fork of the popular
+    "Projects" repository, that includes practical projects for any programming language<br>
+    <a href="https://github.com/danieljromero15/imgStitch">imgStitch</a> - An old project from a few years ago
+    that allowed me to put together a 36000x36000 combined image of a map of Breath of the Wild. Details are in
+    the Readme's
+</div>
 
-    <div class="dropdown">
-        <button onclick="dropText(schoolArrow.id, schoolProjectsDropRepos.id)" class="dropbtn"><span id="schoolArrow"
-                class="dropdownArrow">&gt;</span> School Projects</button>
-        <div id="schoolProjectsDropRepos" class="dropdown-content">
-            <a href="https://github.com/danieljromero15/CSCI1301-Python-Projects">CSCI1301-Python-Projects</a> -
-            Computer Science I, Fall 2022<br>
-            <a href="https://github.com/danieljromero15/CSCI1302-Java-zyLabs">CSCI1302-Java-zyLabs</a> -
-            Computer Science II, Spring 2023<br>
-            <a href="https://github.com/danieljromero15/CSCI3000-Websites">CSCI3000-Websites</a> - Web
-            Programming, Spring 2024<br>
-            <a href="https://github.com/danieljromero15/CSCI3200-Reviewing-Java">CSCI3200-Reviewing-Java</a>
-            - Data Structures and Analysis of Algorithms, Spring 2024<br>
-            <a href="https://github.com/danieljromero15/CSCI3660-Zybooks-Pizza-Party">CSCI3660-Zybooks-Pizza-Party</a>
-            - Mobile Application Development, Spring 2024
-        </div>
-    </div>
+<br>
 
-    <br>
+<div id="schoolProjectsDropRepos" class="dropdown-content">
+    <a href="https://github.com/danieljromero15/CSCI1301-Python-Projects">CSCI1301-Python-Projects</a> -
+    Computer Science I, Fall 2022<br>
+    <a href="https://github.com/danieljromero15/CSCI1302-Java-zyLabs">CSCI1302-Java-zyLabs</a> -
+    Computer Science II, Spring 2023<br>
+    <a href="https://github.com/danieljromero15/CSCI3000-Websites">CSCI3000-Websites</a> - Web
+    Programming, Spring 2024<br>
+    <a href="https://github.com/danieljromero15/CSCI3200-Reviewing-Java">CSCI3200-Reviewing-Java</a>
+    - Data Structures and Analysis of Algorithms, Spring 2024<br>
+    <a href="https://github.com/danieljromero15/CSCI3660-Zybooks-Pizza-Party">CSCI3660-Zybooks-Pizza-Party</a>
+    - Mobile Application Development, Spring 2024
+</div>
 
-    <div class="dropdown">
-        <button onclick="dropText(forkArrow.id, forksRepos.id)" class="dropbtn"><span id="forkArrow"
-                class="dropdownArrow">&gt;</span> Forks</button>
-        <div id="forksRepos" class="dropdown-content">
-            <a href="https://github.com/danieljromero15/Shipwright-no-title-logos">Shipwright-no-title-logos</a> - A
-            fork of the Ocarina of Time PC Port, modified to remove the title screen logos. Used for Wallpaper
-            Engine.<br>
-            <a href="https://github.com/danieljromero15/WiiSXRX">WiiSXRX</a> - A fork of a PSX emulator for
-            the Wii<br>
-            <a href="https://github.com/danieljromero15/UWUVCI-Images">UWUVCI-Images</a> - Fixes an issue
-            with a specific image in a repository for Wii U VC injections<br>
-        </div>
-    </div>
+<br>
+
+<div id="forksRepos" class="dropdown-content">
+    <a href="https://github.com/danieljromero15/Shipwright-no-title-logos">Shipwright-no-title-logos</a> - A
+    fork of the Ocarina of Time PC Port, modified to remove the title screen logos. Used for Wallpaper
+    Engine.<br>
+    <a href="https://github.com/danieljromero15/WiiSXRX">WiiSXRX</a> - A fork of a PSX emulator for
+    the Wii<br>
+    <a href="https://github.com/danieljromero15/UWUVCI-Images">UWUVCI-Images</a> - Fixes an issue
+    with a specific image in a repository for Wii U VC injections<br>
+</div>
 </body>
 
 </html>
