@@ -1,9 +1,9 @@
 function dropText(id, dropID) {
-    //console.log(id);
-    //console.log(dropID);
-    var text = document.getElementById(id).innerHTML;
+    console.log(id);
+    console.log(dropID);
+    //var text = document.getElementById(id).innerHTML;
 
-    //closeDropdown();
+    closeDropdown(null, dropID);
 
     document.getElementById(dropID).classList.toggle("show");
     if (document.getElementById(dropID).classList.contains('show')) {
@@ -14,24 +14,49 @@ function dropText(id, dropID) {
 
 }
 
-function closeDropdown(dropEvent){
+function closeDropdown(dropEvent, notThisOne) {
     console.log(dropEvent);
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    try{
     if (!dropEvent.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
+        closeDropdownsList(dropdowns);
+    }}catch(TypeError){
+        /*console.log(dropdowns);
 
-                var arrows = document.getElementsByClassName("dropdownArrow")
-                for (var i = 0; i < arrows.length; i++) {
-                    arrows[i].innerHTML = "&gt;";
-                }
+        console.log("need to remove: " + notThisOne);*/
+
+        var newDropdowns = [];
+
+        for(var n = 0; n < dropdowns.length; n++){
+            //console.log(dropdowns[n]);
+            if(dropdowns[n].id !== notThisOne){
+                newDropdowns.push(dropdowns[n]);
             }
         }
+
+        /*console.log("New Dropdowns:")
+        console.log(newDropdowns);*/
+
+        closeDropdownsList(newDropdowns);
 
     }
 }
 
-window.onclick = function (event) {closeDropdown(event);};
+function closeDropdownsList(dropdownsCollection){
+    var i;
+    for (i = 0; i < dropdownsCollection.length; i++) {
+        var openDropdown = dropdownsCollection[i];
+        if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+
+            var arrows = document.getElementsByClassName("dropdownArrow")
+            for (i = 0; i < arrows.length; i++) {
+                arrows[i].innerHTML = "&gt;";
+            }
+        }
+    }
+}
+
+window.onclick = function (event) {
+    closeDropdown(event);
+};
