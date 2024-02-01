@@ -1,6 +1,6 @@
 function dropText(id, dropID) {
-    console.log(id);
-    console.log(dropID);
+    //console.log(id);
+    //console.log(dropID);
     //var text = document.getElementById(id).innerHTML;
 
     closeDropdown(null, dropID);
@@ -15,7 +15,7 @@ function dropText(id, dropID) {
 }
 
 function closeDropdown(dropEvent, notThisOne) {
-    console.log(dropEvent);
+    //console.log(dropEvent);
     const dropdowns = document.getElementsByClassName("dropdown-content");
     try {
         if (!dropEvent.target.matches('.dropbtn')) {
