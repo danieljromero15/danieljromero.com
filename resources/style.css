@@ -9,6 +9,13 @@ body {
     font-family: Arial, sans-serif;
 }
 
+footer{
+    position: fixed;
+    bottom: 0;
+    font-size: 2vh;
+    padding: 5px;
+}
+
 h1 {
     padding: 1.5%;
     font-size: 4vh;
@@ -63,6 +70,7 @@ td {
     font-size: 2.2vh;
     margin-left: 2em;
     margin-right: 2em;
+    margin-bottom: 2em; /* Only here for footer */
 }
 
 .show {
