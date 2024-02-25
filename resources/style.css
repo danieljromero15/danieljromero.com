@@ -9,7 +9,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-footer{
+footer {
     position: fixed;
     bottom: 0;
     font-size: 2vh;
@@ -30,6 +30,12 @@ p {
 /*table, td, th {
     border: 1px solid;
 }*/
+
+button span {
+    /* Selects spans inside buttons, makes span unclickable so it clicks the button behind it instead.
+    Resolves issue of clicking on span doesn't click the button */
+    pointer-events: none;
+}
 
 table {
     table-layout: fixed;
@@ -54,7 +60,6 @@ td {
     width: 100%;
     height: 6vh;
     min-height: 60px;
-
 }
 
 .dropdown:hover {
