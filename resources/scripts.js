@@ -46,7 +46,7 @@ function closeDropdownsList(dropdownsCollection) {
 
             const arrows = document.getElementsByClassName("dropdownArrow")
             for (i = 0; i < arrows.length; i++) {
-                arrows[i].innerHTML = "&gt;";
+                arrows[i].innerHTML = "&#x25B6;";
             }
         }
     }
