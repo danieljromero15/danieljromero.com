@@ -4,11 +4,10 @@ html {
 }
 
 body {
-    background-color: #444;
     font-size: 100%;
     font-family: Arial, sans-serif;
-    /*background: url("https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg") no-repeat center center fixed;
-    background-size: cover;*/
+    background: #444 url("stacked-peaks-haikei.svg") no-repeat fixed center center;
+    background-size: cover;
 }
 
 body, button {
@@ -100,6 +99,7 @@ hr {
     margin-left: 2em;
     margin-right: 2em;
     margin-bottom: 2em; /* Only here for footer */
+    line-height: 4vh;
 }
 
 .show {
