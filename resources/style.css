@@ -4,9 +4,23 @@ html {
 }
 
 body {
-    background-color: beige;
+    background-color: #444;
     font-size: 100%;
     font-family: Arial, sans-serif;
+    /*background: url("https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg") no-repeat center center fixed;
+    background-size: cover;*/
+}
+
+body, button {
+    color: white;
+}
+
+a:link {
+    color: lightblue;
+}
+
+a:visited {
+    color: mediumpurple;
 }
 
 footer {
@@ -46,6 +60,16 @@ td {
     text-align: center;
 }
 
+header {
+    background-color: #375a7f;
+    margin: -10px 20px;
+    border-radius: 10px;
+}
+
+hr {
+    margin: 0 20px 10px;
+}
+
 .dropdown {
     position: relative;
     display: block;
@@ -63,7 +87,7 @@ td {
 }
 
 .dropdown:hover {
-    background-color: #e4d5b7;
+    background-color: #5B5B5B;
     border-radius: 5px;
 }
 
