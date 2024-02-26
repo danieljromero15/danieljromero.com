@@ -110,3 +110,19 @@ hr {
     margin-left: auto;
     margin-right: auto;
 }
+
+#contact-links{
+    width: 98%;
+    text-align: right;
+    color: white;
+}
+
+.contact-links_button{
+    padding: 4px;
+    border-radius: 50%;
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
+    height: 3vh;
+    width: 3vh;
+}
