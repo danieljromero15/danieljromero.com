@@ -5,12 +5,8 @@ function dropText(id, dropID) {
 
     closeDropdown(null, dropID);
 
+    document.getElementById(id).classList.toggle("rotateArrow");
     document.getElementById(dropID).classList.toggle("show");
-    if (document.getElementById(dropID).classList.contains('show')) {
-        document.getElementById(id).innerHTML = "&#x25BC;";
-    } else {
-        document.getElementById(id).innerHTML = "&#x25B6;";
-    }
 
 }
 
@@ -43,11 +39,6 @@ function closeDropdownsList(dropdownsCollection) {
         const openDropdown = dropdownsCollection[i];
         if (openDropdown.classList.contains('show')) {
             openDropdown.classList.remove('show');
-
-            const arrows = document.getElementsByClassName("dropdownArrow")
-            for (i = 0; i < arrows.length; i++) {
-                arrows[i].innerHTML = "&#x25B6;";
-            }
         }
     }
 }

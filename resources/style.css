@@ -1,3 +1,7 @@
+:root {
+    --arrow-transform-duration: 80ms;
+}
+
 @font-face {
     font-family: "Roboto";
     src: url("fonts/Roboto/Roboto-Light.ttf");
@@ -128,4 +132,15 @@ hr {
     border-style: solid;
     height: 3vh;
     width: 3vh;
+}
+
+.dropdownArrow {
+    display: inline-block;
+    transition-duration: var(--arrow-transform-duration);
+}
+
+.rotateArrow {
+    transform: rotate(90deg);
+    transition-duration: var(--arrow-transform-duration);
+    transition-timing-function: linear;
 }
