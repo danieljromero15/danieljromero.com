@@ -39,6 +39,10 @@ function closeDropdownsList(dropdownsCollection) {
         const openDropdown = dropdownsCollection[i];
         if (openDropdown.classList.contains('show')) {
             openDropdown.classList.remove('show');
+
+            document.querySelectorAll(".dropdownArrow").forEach((arrow) => {
+                arrow.classList.remove("rotateArrow")
+            });
         }
     }
 }
