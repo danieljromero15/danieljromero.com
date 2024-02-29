@@ -117,14 +117,14 @@ hr {
     margin-right: auto;
 }
 
-#contact-links{
+#contact-links {
     width: 100%;
     right: 5px;
     text-align: right;
     color: white;
 }
 
-.contact-links_button{
+.contact-links_button {
     padding: 4px;
     border-radius: 50%;
     border-color: white;
