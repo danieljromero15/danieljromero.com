@@ -14,7 +14,8 @@ function closeDropdown(dropEvent, notThisOne) {
     //console.log(dropEvent);
     const dropdowns = document.getElementsByClassName("dropdown-content");
     try {
-        if (!dropEvent.target.matches('.dropbtn')) {
+        if (!dropEvent.target.matches('.dropbtn') &&
+            !dropEvent.target.closest('.dropdown-content')) {
             closeDropdownsList(dropdowns);
         }
     } catch (TypeError) {
