@@ -56,20 +56,18 @@ window.onload = function () {
                         projectsBranches.then((branchesResponse) => {
                             branchesResponse.data.forEach(element => {
                                 if (element.name === "master") return;
-                                //console.log(repository.branches_url)
-                                //console.log(repository.html_url + "/tree/" + element.name);
-                                addToDivArray("personalDropRepos", `${repository.name}/${element.name}`, repository.html_url + "/tree/" + element.name, "A fork of the popular \"Projects\" repository, that includes practical projects for any programming language. Developed in " + element.name);
+                                addToDivArray("personalDropRepos", [repository, element], "A fork of the popular \"Projects\" repository, that includes practical projects for any programming language. Developed in " + element.name);
                             })
                         });
                         return;
                 }
 
                 if (repository.name.includes("CSCI")) {
-                    addToDivArray("schoolProjectsDropRepos", repository.name, repository.html_url, descResponse.split("\n")[i]);
+                    addToDivArray("schoolProjectsDropRepos", repository, descResponse.split("\n")[i]);
                 } else if (repository.fork) {
-                    addToDivArray("forksRepos", repository.name, repository.html_url, descResponse.split("\n")[i]);
+                    addToDivArray("forksRepos", repository, descResponse.split("\n")[i]);
                 } else {
-                    addToDivArray("personalDropRepos", repository.name, repository.html_url, descResponse.split("\n")[i]);
+                    addToDivArray("personalDropRepos", repository, descResponse.split("\n")[i]);
                 }
             }));
         })
@@ -81,13 +79,29 @@ let schoolArray = [];
 let forksArray = [];
 let repoN = 0;
 
-// TODO: Add stars to projects based on last push
-// TODO: add if statements for each project
-function addToDivArray(id, name, link, desc) {
+// branches should pass repo as an array, with [repository, branch]
+function addToDivArray(id, repo, desc) {
     //console.log(id);
     //let element = document.querySelector("#" + id + " > ul");
     //console.log(element.innerHTML);
-    let to_add = `<li><a href="${link}">${name}</a> - ${desc}</li>`
+    let lastPushDay = (Array.isArray(repo) ? repo[0].pushed_at : repo.pushed_at).substring(0, 10);
+
+    const lastPush = new Date(lastPushDay);
+    const oneDay = 1000 * 60 * 60 * 24;
+    const d90DaysAgo = new Date(Date.now() - (oneDay * 30));
+
+    let star = (lastPush >= d90DaysAgo) ? "*" : "";
+
+    // TODO: remove after May 4th, 2024.
+    // This line is only here because I needed to update some readmes to make the API work nicely.
+    // Outside of the readmes, the projects themselves have not been updated for years.
+    if(!Array.isArray(repo) && repo.name.includes("CSCI") && !desc.includes(new Date().getFullYear())) star = "";
+
+    let to_add = `<li>${star}<a href="${repo.html_url}">${repo.name}</a> - ${desc}</li>`;
+    if (Array.isArray(repo)) {
+        to_add = `<li>${star}<a href="${repo[0].html_url}/tree/${repo[1].name}">${repo[0].name}/${repo[1].name}</a> - ${desc}</li>`;
+    }
+
     switch (id) {
         case "personalDropRepos":
             personalArray.push(to_add);
@@ -102,10 +116,16 @@ function addToDivArray(id, name, link, desc) {
     //element.innerHTML += `<li><a href="${link}">${name}</a> - ${desc}</li>`
     repoN++;
     //console.log(repoN >= repoTotal);
-    if(repoN >= repoTotal) {
-        personalArray.sort(function(a, b) {return a.localeCompare(b);});
-        schoolArray.sort(function(a, b) {return a.localeCompare(b);});
-        forksArray.sort(function(a, b) {return a.localeCompare(b);});
+    if (repoN >= repoTotal) {
+        personalArray.sort(function (a, b) {
+            return a.localeCompare(b);
+        });
+        schoolArray.sort(function (a, b) {
+            return a.localeCompare(b);
+        });
+        forksArray.sort(function (a, b) {
+            return a.localeCompare(b);
+        });
         // This was painful to do in a loop, so I didn't
         document.querySelector("#personalDropRepos > ul").innerHTML = personalArray.join("");
         document.querySelector("#schoolProjectsDropRepos > ul").innerHTML = schoolArray.join("");
