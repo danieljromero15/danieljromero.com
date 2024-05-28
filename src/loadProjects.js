@@ -92,11 +92,6 @@ function addToDivArray(id, repo, desc) {
 
     let star = (lastPush >= d90DaysAgo) ? "*" : "";
 
-    // TODO: remove after May 4th, 2024.
-    // This line is only here because I needed to update some readmes to make the API work nicely.
-    // Outside of the readmes, the projects themselves have not been updated for years.
-    if(!Array.isArray(repo) && repo.name.includes("CSCI") && !desc.includes(new Date().getFullYear())) star = "";
-
     let to_add = `<li>${star}<a href="${repo.html_url}">${repo.name}</a> - ${desc}</li>`;
     if (Array.isArray(repo)) {
         to_add = `<li>${star}<a href="${repo[0].html_url}/tree/${repo[1].name}">${repo[0].name}/${repo[1].name}</a> - ${desc}</li>`;
