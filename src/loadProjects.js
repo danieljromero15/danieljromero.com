@@ -64,6 +64,8 @@ window.onload = function () {
 
                 if (descResponse === '404: Not Found') descResponse = 'No README found.'
 
+                if (descResponse.startsWith('# ')) descResponse = descResponse.replace('# ', '');
+
                 if (repository.name.includes("CSCI")) {
                     addToDivArray("schoolProjectsDropRepos", repository, descResponse.split("\n")[i]);
                 } else if (repository.fork) {
