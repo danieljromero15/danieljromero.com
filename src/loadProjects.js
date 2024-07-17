@@ -45,6 +45,9 @@ window.onload = function () {
                     case "danieljromero15.github.io":
                         i = 2;
                         break;
+                    case "Archivist":
+                        descResponse = "Software Engineering, Summer 2024. Final project, a video game completion log"
+                        break;
                     case "imgStitch":
                         descResponse = "An old project from a few years ago that allowed me to put together a 36000x30000 combined image of a map of Breath of the Wild. Details are in the README";
                         break;
@@ -66,7 +69,7 @@ window.onload = function () {
 
                 if (descResponse.startsWith('# ')) descResponse = descResponse.replace('# ', '');
 
-                if (repository.name.includes("CSCI")) {
+                if (repository.name.includes("CSCI") || repository.name.includes("Archivist")) {
                     addToDivArray("schoolProjectsDropRepos", repository, descResponse.split("\n")[i]);
                 } else if (repository.fork) {
                     addToDivArray("forksRepos", repository, descResponse.split("\n")[i]);
