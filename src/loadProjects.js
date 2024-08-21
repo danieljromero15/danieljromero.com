@@ -69,7 +69,7 @@ window.onload = function () {
 
                 if (descResponse.startsWith('# ')) descResponse = descResponse.replace('# ', '');
 
-                if (repository.name.includes("CSCI") || repository.name.includes("Archivist")) {
+                if (repository.name.includes("CSCI") || repository.name.includes("CIS") || repository.name.includes("Archivist")) {
                     addToDivArray("schoolProjectsDropRepos", repository, descResponse.split("\n")[i]);
                 } else if (repository.fork) {
                     addToDivArray("forksRepos", repository, descResponse.split("\n")[i]);
