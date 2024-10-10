@@ -36,13 +36,10 @@ window.onload = function () {
                     case "Shipwright-no-title-logos":
                         descResponse = "A fork of the Ocarina of Time PC Port, modified to remove the title screen logos. Used for Wallpaper Engine.";
                         break;
-                    case "WiiSXRX":
-                        descResponse = "A fork of a PSX emulator for the Wii";
-                        break;
                     case "UWUVCI-Images":
                         descResponse = "Fixes an issue with a specific image in a repository for Wii U VC injections";
                         break;
-                    case "danieljromero15.github.io":
+                    case "danieljromero.com":
                         i = 2;
                         break;
                     case "Archivist":
@@ -54,11 +51,14 @@ window.onload = function () {
                     case "CSCI3000-Websites":
                         descResponse = descResponse.replace("Sites available at https://danieljromero15.github.io/CSCI3000-Websites/", "Sites available <a href=\"https://danieljromero15.github.io/CSCI3000-Websites/\">here</a>");
                         break;
+                    case "CSCI1411-Script-Programming":
+                        descResponse = "Script Programming, Fall 2024"
+                        break;
                     case "Projects": // needs to list all branches
                         let projectsBranches = getBranches("Projects");
                         projectsBranches.then((branchesResponse) => {
                             branchesResponse.data.forEach(element => {
-                                if (element.name === "master") return;
+                                if (element.name === "master") return; // master branch is template with README, should not be listed
                                 addToDivArray("personalDropRepos", [repository, element], "A fork of the popular \"Projects\" repository, that includes practical projects for any programming language. Developed in " + element.name);
                             })
                         });
