@@ -1,4 +1,4 @@
-import {Octokit} from "https://esm.sh/octokit";
+import {Octokit} from "https://esm.sh/@octokit/core";
 
 // Octokit.js
 // https://github.com/octokit/core.js#readme
