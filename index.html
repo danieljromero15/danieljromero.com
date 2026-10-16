@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="src/style.css">
     <script src="src/scripts.js"></script>
     <script type="module" src="src/loadProjects.js"></script>
-    <link rel="preload" href="src/pexels-simon-berger-1323550.jpg" as="image">
+    <link rel="preload" href="src/pexels-simon-berger-1323550.webp" as="image">
     <base target="_blank">
 
     <title>Daniel Romero</title>
@@ -24,7 +24,7 @@
     <tr>
         <td>
             <div class="dropdown">
-                <button onclick="dropText(personalArrow.id, personalDropRepos.id)" class="dropbtn"><span
+                <button onclick="dropText('personalArrow', 'personalDropRepos')" class="dropbtn"><span
                         id="personalArrow"
                         class="dropdownArrow">&#x25B6</span>&nbsp;Personal Projects
                 </button>
@@ -32,7 +32,7 @@
         </td>
         <td>
             <div class="dropdown">
-                <button onclick="dropText(schoolArrow.id, schoolProjectsDropRepos.id)" class="dropbtn"><span
+                <button onclick="dropText('schoolArrow', 'schoolProjectsDropRepos')" class="dropbtn"><span
                         id="schoolArrow"
                         class="dropdownArrow">&#x25B6</span>&nbsp;School Projects
                 </button>
@@ -40,8 +40,9 @@
         </td>
         <td>
             <div class="dropdown">
-                <button onclick="dropText(forkArrow.id, forksRepos.id)" class="dropbtn"><span id="forkArrow"
-                                                                                              class="dropdownArrow">&#x25B6</span>&nbsp;Forks
+                <button onclick="dropText('forkArrow', 'forksRepos')" class="dropbtn"><span
+                        id="forkArrow"
+                        class="dropdownArrow">&#x25B6</span>&nbsp;Forks
                 </button>
             </div>
         </td>
@@ -62,7 +63,7 @@
 
 <br><br>
 
-<footer>*Actively being worked on</footer>
+<footer>*Recently worked on</footer>
 
 <footer id="contact-links">
     <a href="mailto:danieljromero305@gmail.com"><input type="image" alt="email" class="contact-links_button"

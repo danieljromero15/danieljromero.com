@@ -14,7 +14,7 @@ html {
 
 body {
     font-size: 100%;
-    background: url("pexels-simon-berger-1323550.jpg") no-repeat fixed center right;
+    background: url("pexels-simon-berger-1323550.webp") no-repeat fixed right center;
     background-size: cover;
 }
 
@@ -79,7 +79,6 @@ hr {
 .dropbtn {
     background: none;
     border: none;
-    max-font-size: 20%;
     font-size: 2.2vh;
     padding: 0.6%;
     width: 100%;
@@ -97,7 +96,6 @@ hr {
     display: none;
     position: relative;
     padding: 1%;
-    max-font-size: 20%;
     font-size: 2.2vh;
     margin-left: 2em;
     margin-right: 2em;

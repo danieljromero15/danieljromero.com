@@ -32,6 +32,7 @@ window.onload = function () {
             //console.log(repository);
             let i = 0;
             fetch(`https://raw.githubusercontent.com/${repository.full_name}/${repository.default_branch}/README.md`).then((READMEresponse) => READMEresponse.text().then(function (descResponse) {
+                // exception list for those that don't have readmes that fit the format
                 switch (repository.name) {
                     case "Shipwright-no-title-logos":
                         descResponse = "A fork of the Ocarina of Time PC Port, modified to remove the title screen logos. Used for Wallpaper Engine.";
@@ -53,6 +54,9 @@ window.onload = function () {
                         break;
                     case "CSCI1411-Script-Programming":
                         descResponse = "Script Programming, Fall 2024"
+                        break;
+                    case "CSCI4100-Multithreading":
+                        descResponse = "Operating Systems and File Organization, Spring 2025"
                         break;
                     case "Projects": // needs to list all branches
                         let projectsBranches = getBranches("Projects");
@@ -87,21 +91,24 @@ let forksArray = [];
 let repoN = 0;
 
 // branches should pass repo as an array, with [repository, branch]
-function addToDivArray(id, repo, desc) {
+function addToDivArray(id, repository, desc) {
     //console.log(id);
     //let element = document.querySelector("#" + id + " > ul");
     //console.log(element.innerHTML);
-    let lastPushDay = (Array.isArray(repo) ? repo[0].pushed_at : repo.pushed_at).substring(0, 10);
+    const repo = Array.isArray(repository) ? repository[0] : repository;
+    const branch  = Array.isArray(repository) ? repository[1] : null;
+
+    const lastPushDay = repo.pushed_at.substring(0, 10);
 
     const lastPush = new Date(lastPushDay);
     const oneDay = 1000 * 60 * 60 * 24;
-    const d90DaysAgo = new Date(Date.now() - (oneDay * 30));
+    const d90DaysAgo = new Date(Date.now() - (oneDay * 90));
 
-    let star = (lastPush >= d90DaysAgo) ? "*" : "";
+    const star = (lastPush >= d90DaysAgo) ? "*" : "";
 
     let to_add = `<li>${star}<a href="${repo.html_url}">${repo.name}</a> - ${desc}</li>`;
-    if (Array.isArray(repo)) {
-        to_add = `<li>${star}<a href="${repo[0].html_url}/tree/${repo[1].name}">${repo[0].name}/${repo[1].name}</a> - ${desc}</li>`;
+    if (branch) {
+        to_add = `<li>${star}<a href="${repo.html_url}/tree/${branch.name}">${repo.name}/${branch.name}</a> - ${desc}</li>`;
     }
 
     switch (id) {
